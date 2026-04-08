@@ -15,7 +15,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://college-website-backend-jqmv.onrender.com/",
+        target: "https://college-website-backend-jqmv.onrender.com",
         changeOrigin: true,
         secure: false
       }
