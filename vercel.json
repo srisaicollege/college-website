@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "https://sai-college-website.onrender.com/api/:path*"
+            "destination": "https://college-website-backend-jqmv.onrender.com/api/:path*"
         },
         {
             "source": "/(.*)",

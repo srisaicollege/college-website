@@ -40,7 +40,7 @@ const Footer = () => {
                     {/* SOCIALS */}
                     <div className="flex gap-3">
                         {[
-                            { Icon: MessageCircle, href: "" },
+                            { Icon: MessageCircle, href: "https://wa.me/919986408779?text=Hello%20I%20am%20interested%20in%20your%20college" },
                             { Icon: Instagram, href: "https://www.instagram.com/srisaicollegeforwomen?igsh=MWk2YzJqbHkydzdyMw==" },
                             { Icon: Linkedin, href: "https://www.linkedin.com/company/sri-sai-college-for-women/" }
                         ].map((social, i) => (

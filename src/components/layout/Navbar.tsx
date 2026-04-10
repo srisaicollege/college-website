@@ -429,11 +429,21 @@ const Navbar = () => {
                                                 </div>
                                                 <div className="flex gap-2">
                                                     {[
-                                                        { Icon: MessageCircle, href: "" },
+                                                        {
+                                                            Icon: MessageCircle,
+                                                            href: "https://wa.me/919986408779?text=Hello%20I%20am%20interested%20in%20your%20college"
+                                                        },
                                                         { Icon: Instagram, href: "https://www.instagram.com/srisaicollegeforwomen?igsh=MWk2YzJqbHkydzdyMw==" },
                                                         { Icon: Linkedin, href: "https://www.linkedin.com/company/sri-sai-college-for-women/" }
                                                     ].map((social, i) => (
-                                                        <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-gray-50 rounded-xl flex items-center justify-center hover:bg-brand-navy hover:text-white text-gray-400 transition-all">
+                                                        <a
+                                                            key={i}
+                                                            href={social.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            onClick={() => setIsMenuOpen(false)}
+                                                            className="w-9 h-9 bg-gray-50 rounded-xl flex items-center justify-center hover:bg-brand-navy hover:text-white text-gray-400 transition-all"
+                                                        >
                                                             <social.Icon className="w-4 h-4" />
                                                         </a>
                                                     ))}

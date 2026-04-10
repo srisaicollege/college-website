@@ -27,11 +27,47 @@ const Contact = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // ✅ Validate required fields
+        if (!formData.name.trim() || !formData.phone.trim()) {
+            setStatus({
+                type: 'error',
+                message: 'Name and Phone Number are required.'
+            });
+            return;
+        }
+
+        // ✅ Validate phone (Indian format: 10 digits starting 6-9)
+        if (!/^[6-9]\d{9}$/.test(formData.phone)) {
+            setStatus({
+                type: 'error',
+                message: 'Enter a valid 10-digit phone number.'
+            });
+            return;
+        }
+
+        // ✅ Validate email ONLY if entered
+        if (
+            formData.email &&
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+        ) {
+            setStatus({
+                type: 'error',
+                message: 'Please enter a valid email address.'
+            });
+            return;
+        }
+
         setStatus({ type: 'loading', message: 'Sending your inquiry...' });
 
         try {
             await sendInquiry(formData);
-            setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+
+            setStatus({
+                type: 'success',
+                message: 'Thank you! Your message has been sent successfully.'
+            });
+
             setFormData({
                 name: '',
                 email: '',
@@ -39,11 +75,15 @@ const Contact = () => {
                 subject: 'General Inquiry',
                 message: ''
             });
+
         } catch (error: any) {
             console.error('Submission error:', error);
+
             setStatus({
                 type: 'error',
-                message: error.response?.data?.message || 'Something went wrong. Please try again later.'
+                message:
+                    error.response?.data?.message ||
+                    'Something went wrong. Please try again later.'
             });
         }
     };
@@ -97,11 +137,11 @@ const Contact = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-black text-brand-navy/60 uppercase tracking-widest ml-1">Email Address</label>
+                                                <label className="text-xs font-black text-brand-navy/60 uppercase tracking-widest ml-1">Email Address(Optional)</label>
                                                 <input
                                                     type="email"
                                                     name="email"
-                                                    required
+
                                                     value={formData.email}
                                                     onChange={handleChange}
                                                     placeholder="your@email.com"
@@ -116,6 +156,7 @@ const Contact = () => {
                                                 <input
                                                     type="tel"
                                                     name="phone"
+                                                    required
                                                     value={formData.phone}
                                                     onChange={handleChange}
                                                     placeholder="+91 00000 00000"
@@ -123,7 +164,7 @@ const Contact = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-black text-brand-navy/60 uppercase tracking-widest ml-1">Subject</label>
+                                                <label className="text-xs font-black text-brand-navy/60 uppercase tracking-widest ml-1">Subject(Optional)</label>
                                                 <select
                                                     name="subject"
                                                     value={formData.subject}
@@ -139,10 +180,10 @@ const Contact = () => {
                                         </div>
 
                                         <div className="space-y-2">
-                                            <label className="text-xs font-black text-brand-navy/60 uppercase tracking-widest ml-1">Your Message</label>
+                                            <label className="text-xs font-black text-brand-navy/60 uppercase tracking-widest ml-1">Your Message(Optional)</label>
                                             <textarea
                                                 name="message"
-                                                required
+
                                                 rows={3}
                                                 value={formData.message}
                                                 onChange={handleChange}
@@ -194,7 +235,7 @@ const Contact = () => {
 
                                     <div className="grid gap-6">
                                         {[
-                                            { icon: MapPin, title: "Campus", value: <>No. 1839, Sri Sai Mandir Road <br/> 3rd Cross 'D' Block, 2nd Stage <br /> Rajajinagar, Bengaluru - 560010</> },
+                                            { icon: MapPin, title: "Campus", value: <>No. 1839, Sri Sai Mandir Road <br /> 3rd Cross 'D' Block, 2nd Stage <br /> Rajajinagar, Bengaluru - 560010</> },
                                             { icon: Phone, title: "Contact", value: <> +91 9986408779<br /> +91 9886771063</> },
                                             { icon: Mail, title: "Email", value: <>srisaicollegeforwomen@gmail.com</> },
                                             { icon: Clock, title: "Hours", value: <>Mon-Fri: 9AM - 5PM<br />Sat: 9AM - 1PM</> }

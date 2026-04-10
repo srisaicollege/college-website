@@ -240,7 +240,7 @@ const AntiRagging = () => {
 
                 <div className="relative z-10 flex flex-col items-center gap-8">
                     <p className="text-amber-500 font-black text-sm uppercase tracking-widest">Report an incident (24/7 Confidential Helpline)</p>
-                    <a href="tel:18001805522" className="group/btn flex items-center gap-6 bg-red-600 px-10 py-6 rounded-[2.5rem] font-black text-2xl lg:text-3xl hover:bg-white hover:text-red-600 transition-all shadow-2xl shadow-red-900/40 active:scale-95">
+                    <a href="tel:+91 9886771063" className="group/btn flex items-center gap-6 bg-red-600 px-10 py-6 rounded-[2.5rem] font-black text-2xl lg:text-3xl hover:bg-white hover:text-red-600 transition-all shadow-2xl shadow-red-900/40 active:scale-95">
                         <PhoneCall className="h-8 w-8 group-hover/btn:animate-bounce" />
                         +91 9886771063
                     </a>
