@@ -15,6 +15,7 @@ import Contact from './pages/Contact';
 import Admissions from './pages/Admissions';
 import Faculty from './pages/Faculty';
 import Infrastructure from './pages/Infrastructure';
+import Downloads from './pages/Downloads';
 import AcademicsLayout from './pages/academics/AcademicsLayout';
 import AcademicsHome from './pages/academics/AcademicsHome';
 import Puc from './pages/academics/Puc';
@@ -75,6 +76,7 @@ function AnimatedRoutes() {
                     </Route>
                     <Route path="faculty" element={<Faculty />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="downloads" element={<Downloads />} />
                 </Route>
             </Routes>
         </AnimatePresence>
