@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom"
-import { Menu, X, ChevronRight, Instagram, Linkedin, MessageCircle, Mail, Phone, ArrowRight, Sparkles, GraduationCap, Users2, Globe, Shield } from "lucide-react"
+import { Menu, X, ChevronRight, Instagram, Linkedin, MessageCircle, Mail, Phone, ArrowRight, Sparkles, GraduationCap, Users2, Globe, Shield, Download } from "lucide-react"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { fullMenu, type MenuItem } from "@/lib/menu"
@@ -220,7 +220,8 @@ const Navbar = () => {
                                                             : item.label === 'Non Academics' ? Sparkles
                                                                 : item.label === 'Student Life' ? Sparkles
                                                                     : item.label === 'Faculty' ? Users2
-                                                                        : Mail
+                                                                        : item.label === 'Downloads' ? Download
+                                                                            : Mail
 
                                         return (
                                             <div key={item.label}>
