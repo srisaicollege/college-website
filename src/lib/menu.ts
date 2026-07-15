@@ -62,4 +62,8 @@ export const fullMenu: MenuItem[] = [
         label: "Contact Us",
         path: "/contact",
     },
+    {
+        label: "Downloads",
+        path: "/downloads",
+    },
 ]
