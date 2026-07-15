@@ -21,7 +21,7 @@ const Downloads = () => {
                         badge="Student Resources"
                         title="Academic Downloads"
                         highlight="Downloads"
-                        subtitle="Access and download course syllabi and previous years' question papers to assist with your studies and exam preparation."
+                        subtitle="Access and download course syllabus and previous years' question papers to assist with your studies and exam preparation."
                         centered={true}
                     />
                 </div>
