@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import RootLayout from './components/layout/RootLayout';
 import ScrollToTop from './components/layout/ScrollToTop';
@@ -77,6 +77,8 @@ function AnimatedRoutes() {
                     <Route path="faculty" element={<Faculty />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="downloads" element={<Downloads />} />
+                    {/* Redirect undefined routes to the home page */}
+                    <Route path="*" element={<Navigate to="/" replace />} />
                 </Route>
             </Routes>
         </AnimatePresence>
