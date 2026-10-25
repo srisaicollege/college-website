@@ -16,7 +16,7 @@ const AboutLayout = () => {
                     <nav className="space-y-2">
                         {[
                             { path: "/about/history", label: "History & Milestones", icon: History },
-                            { path: "/about/founders", label: "Founding Vision", icon: User },
+                            { path: "/about/founders", label: "Our Founders", icon: User },
                             { path: "/about/vision-mission", label: "Vision & Mission", icon: Target },
                             { path: "/about/chairman-message", label: "Chairman's Desk", icon: MessageSquare },
                             { path: "/about/principal-message", label: "Principal's Desk", icon: Info },
